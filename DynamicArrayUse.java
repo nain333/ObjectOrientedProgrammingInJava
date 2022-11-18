@@ -1,12 +1,53 @@
 public class DynamicArrayUse {
     public static void main(String[] args) {
-        DynamicArray D1 = new DynamicArray();
-        D1.add(4);
-        D1.add(3);
-        D1.add(4);
-        int ele=D1.get(1);
-        System.out.println(ele);
-        System.out.println(D1.get(4 ));
+        DynamicArray d1 = new DynamicArray();
+        for (int i = 1; i < 100; i++) {
+            d1.add(i);
+//            at every add operation im calling the size function and printing it just to check my size function.
+            System.out.println(d1.size());
+        }
+//        to check if my get function is completely operational.
+        System.out.println(d1.get(10));
+//        testing get and set functions for the dynamic array d1.
+        d1.set(0,8);
+        System.out.println(d1.get(0));
+//      the index does not exist hence printing out the -1.
+        System.out.println(d1.get(99));
+//      testing the removeLast().
+        while(!d1.isEmpty()){
+
+            System.out.println(d1.removeLast());
+            System.out.println("size - "+ d1.size());
+        }
+//        testing insert function of this dynamic array
+       DynamicArray d2= new DynamicArray();
+        for (int i = 1; i < 100; i++) {
+            d2.add(i);
+
+        }
+        System.out.println(d2.size());
+        d2.add(0,999);
+        System.out.println(d2.get(0));
+        System.out.println(d2.size());
+
 
     }
 }
+class Dyn{
+    public static void main(String[] args) {
+        DynamicArray d1= new DynamicArray();
+        for (int i = 0; i <5 ; i++) {
+            d1.add(i);
+
+        }
+        for (int i = 0; i <5 ; i++) {
+            System.out.println(d1.get(i));
+
+        }
+        d1.add(0,9);
+        for (int i = 0; i < d1.size(); i++) {
+            System.out.println(d1.get(i));
+        }
+    }
+}
+

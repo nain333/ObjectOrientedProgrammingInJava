@@ -32,7 +32,14 @@ public class DynamicArray {
         data[nextElementIndex]= value;
         nextElementIndex++;
     }
-    public void removeLast(){
+    public int removeLast(){
+        if (nextElementIndex==0){
+            return -1;
+        }
+        int temp= data[nextElementIndex];
+//        data[nextElementIndex-1]=0;
+        nextElementIndex--;
+        return temp;
 
     }
     private void  doubleCapacity(){
@@ -42,6 +49,28 @@ public class DynamicArray {
             data[i]=temp[i];
 
         }
+    }
+    public void add(int index, int element){
+        if (nextElementIndex==data.length){
+            doubleCapacity();
+//            nextElementIndex++;
+        }
+        int [] temp = new int[nextElementIndex];
+        for (int i = 0; i < temp.length; i++) {
+            temp[i]=data[i];
+
+        }
+        for (int i = index; i <nextElementIndex ; i++) {
+            data[i]=temp[i];
+
+        }
+        data[index]=element;
+        for (int i = index+1; i <nextElementIndex+1 ; i++) {
+            data[i]=temp[i-1];
+
+
+        }
+        nextElementIndex++;
     }
 
 
