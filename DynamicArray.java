@@ -7,7 +7,7 @@ public class DynamicArray {
         nextElementIndex=0;
     }
     public int size(){
-        return nextElementIndex;
+         return nextElementIndex;
     }
     public boolean isEmpty(){
         return nextElementIndex==0;

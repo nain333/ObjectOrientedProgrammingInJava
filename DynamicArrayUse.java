@@ -35,19 +35,21 @@ public class DynamicArrayUse {
 }
 class Dyn{
     public static void main(String[] args) {
-        DynamicArray d1= new DynamicArray();
-        for (int i = 0; i <5 ; i++) {
-            d1.add(i);
+        DynamicArray da = new DynamicArray();
+        for (int i = 0; i < 6; i++) {
+            da.add(i+1);
+
 
         }
-        for (int i = 0; i <5 ; i++) {
-            System.out.println(d1.get(i));
-
+        for (int i = 0; i < da.size(); i++) {
+            System.out.println(da.get(i));
         }
-        d1.add(0,9);
-        for (int i = 0; i < d1.size(); i++) {
-            System.out.println(d1.get(i));
+        da.add(9,90);
+        for (int i = 0; i < da.size(); i++) {
+            System.out.print(da.get(i)+" ");
+
         }
     }
+
 }
 
