@@ -1,10 +1,13 @@
 package Inheritance;
 
+import java.sql.SQLOutput;
+
 public class Vehicle {
+
     private String color ;
-    private  int maxSpeed;
+    protected   int maxSpeed;
     public void print(){
-        System.out.println("Vehicle"+" Color: "+color+" Maxspeed:"+maxSpeed );
+        System.out.print("Vehicle"+" Color: "+color+" Maxspeed:"+maxSpeed );
     }
 
     public String getColor() {
@@ -27,7 +30,9 @@ public class Vehicle {
         this.maxSpeed=maxSpeed;
 
     }
-    public Vehicle(){
+    public Vehicle(int maxSpeed){
+        maxSpeed=this.maxSpeed;
+        System.out.println("\n Vehicle's Constructor");
 
     }
 }
